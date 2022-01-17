@@ -8,11 +8,11 @@ export const initialState = {
 
 const calculateResult = (num1, num2, operation) => {
     switch(operation) {
-        case("+"):
+        case('+'):
             return num1 + num2;
-        case("*"):
+        case('*'):
             return num1 * num2;
-        case("-"):
+        case('-'):
             return num1 - num2;
     }
 }
