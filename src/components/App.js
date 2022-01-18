@@ -6,7 +6,7 @@ import './App.css';
 import TotalDisplay from './TotalDisplay';
 import CalcButton from './CalcButton';
 
-import { applyNumber, changeOperation, clearDisplay, updateMemory, memoryAddTotal} from '../actions';
+import { applyNumber, changeOperation, clearDisplay, updateMemory, memoryAddTotal, clearMemory} from '../actions';
 
 function App() {
   const [state, dispatch]= useReducer(reducer,initialState);
@@ -35,6 +35,10 @@ function App() {
     dispatch(memoryAddTotal());
   }
 
+  const handleMemoryClear = () => {
+    dispatch(clearMemory());
+  }
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -54,7 +58,7 @@ function App() {
             <div className="row">
               <CalcButton onClick={handleMemoryUpdate} value={"M+"}/>
               <CalcButton onClick={handleMemoryAdd} value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton onClick={handleMemoryClear} value={"MC"}/>
             </div>
 
             <div className="row">
